@@ -7,6 +7,9 @@ const Registration = require('./views/Registration');
 const Input = require('./views/Input');
 const Thems = require('./views/Thems');
 const { User } = require('./db/models');
+const { firstTheme } = require('./db/models');
+const { secondTheme } = require('./db/models');
+const { thirdTheme } = require('./db/models');
 
 const app = express();
 
@@ -76,6 +79,24 @@ app.get('/themes', (req, res) => {
   const html = ReactDOMServer.renderToStaticMarkup(thems);
   res.write('<!DOCTYPE html>');
   res.end(html);
+});
+
+app.get('/question/:id', async (req, res) => {
+  let questionArray = [];
+
+  if (req.params.id === 1) {
+    questionArray = await firstTheme.findAll();
+  }
+
+  if (req.params.id === 2) {
+    questionArray = await secondTheme.findAll();
+  }
+
+  if (req.params.id === 3) {
+    questionArray = await thirdTheme.findAll();
+  }
+
+  res.json({ question: questionArray });
 });
 
 app.listen(PORT);

@@ -52,3 +52,5 @@ regRouter.post('/input', async (reg, res) => {
     res.redirect('/');
   }
 });
+
+module.exports = regRouter;

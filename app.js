@@ -16,17 +16,16 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// app.get('/', (req, res) => {
-
-//   res.send('Hello teams');
-// });
 app.get('/', (req, res) => {
-  const home = React.createElement(Registration, {title: 'Kek'});
-  const html = ReactDOMServer.renderToStaticMarkup(home);
-  res.write('<!DOCTYPE html>');
-  res.end(html);
+  res.redirect('/reg');
 });
 
+// app.get('/', (req, res) => {
+//   const home = React.createElement(Registration, {title: 'Kek'});
+//   const html = ReactDOMServer.renderToStaticMarkup(home);
+//   res.write('<!DOCTYPE html>');
+//   res.end(html);
+// });
 
 app.use('/reg', regRouter);
 

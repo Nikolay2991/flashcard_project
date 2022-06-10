@@ -6,19 +6,17 @@ function Themes({ title }) {
     <Layout title={title}>
       <div className="themes">
 
-        <form method="" action="" id="">
-          <button type="submit">Тема 1</button>
+        <form method="post" action="/question/1" data-id="1">
+          <button className="theme-btn" type="submit">Большой Лебовски</button>
         </form>
 
-        <form method="" action="" id="">
-          <button type="submit">Тема 2</button>
+        <form method="post" action="/question/2" data-id="2">
+          <button className="theme-btn" type="submit">Harry potter</button>
         </form>
 
-        <form method="" action="" id="">
-          <button type="submit">Тема 3</button>
+        <form method="post" action="/question/3" data-id="3">
+          <button className="theme-btn" type="submit">Сериал: Клиника</button>
         </form>
-
-        <script src="/script.js" />
       </div>
     </Layout>
   );

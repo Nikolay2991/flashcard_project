@@ -21,7 +21,6 @@ function Main({ title }) {
           </div>
         </div>
       </nav>
-      <script src="/script.js" />
     </Layout>
   );
 }

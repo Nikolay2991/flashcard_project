@@ -1,19 +1,24 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-function Registration({title}) {
+function Registration({ title }) {
   return (
-    <Layout title = {title}>
+    <Layout title={title}>
       <h1>Регистрация</h1>
 
-      <form method="POST" action="/todo" id="task-form">
-        <input type="text" name="name" />
-        <input type="text" name="login" />
-        <input type="passwod" name="passwod" />
-        <button type="submit">Зарегистрироваться</button>
+      <form method="POST" action="/registr" id="registr">
+        <input type="text" name="name" id="name" />
+        <br />
+        <br />
+        <input type="text" name="login" id="login" />
+        <br />
+        <br />
+        <input type="password" name="password" id="pass" />
+        <br />
+        <br />
+        <button type="submit" name="js-registr">Зарегистрироваться</button>
       </form>
 
-      <script src="/script.js" />
     </Layout>
   );
 }

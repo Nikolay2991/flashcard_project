@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const Registration = require('./views/Registration');
 const Input = require('./views/Input');
 const Thems = require('./views/Thems');
+const Question = require('./views/Question');
 const { User } = require('./db/models');
 const { firstTheme } = require('./db/models');
 const { secondTheme } = require('./db/models');
@@ -39,7 +40,7 @@ app.get('/reg', (req, res) => {
 });
 
 app.post('/registr', async (req, res) => {
-  const result = await User.findOne({ where: { email: req.body.mail }});
+  const result = await User.findOne({ where: { email: req.body.mail } });
   if (result === null) {
     await User.create({
       user_name: req.body.name,
@@ -81,8 +82,9 @@ app.get('/themes', (req, res) => {
   res.end(html);
 });
 
-app.get('/question/:id', async (req, res) => {
+app.post('/question/:id', async (req, res) => {
   let questionArray = [];
+  console.log(req.body);
 
   if (req.params.id === 1) {
     questionArray = await firstTheme.findAll();
@@ -95,7 +97,10 @@ app.get('/question/:id', async (req, res) => {
   if (req.params.id === 3) {
     questionArray = await thirdTheme.findAll();
   }
-
+  const question = React.createElement(Question);
+  const html = ReactDOMServer.renderToStaticMarkup(question);
+  res.write('<!DOCTYPE html>');
+  res.end(html);
   res.json({ question: questionArray });
 });
 

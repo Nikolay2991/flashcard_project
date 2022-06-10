@@ -1,5 +1,5 @@
 const React = require('react');
- 
+
 function Layout({ children }) {
   return (
     <html lang="ru">
@@ -26,8 +26,7 @@ function Layout({ children }) {
       </nav>
         {children}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossOrigin="anonymous" />
-        <script defer src="/script.js" />
-        <script defer src="js/registrate.js" />
+        <script defer src="/js/client.js" />
       </body>
     </html>
   );

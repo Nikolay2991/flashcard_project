@@ -6,3 +6,24 @@ body {
 .form-reg {
   margin-right: 20px;
 }
+
+.form-input {
+ width: 400px;
+ margin-top: 20%;
+ margin-left: 10%;
+}
+h1 {
+  font-family: fst-normal;
+  margin-bottom: 20px;
+}
+.row mb-3 {
+  width: 100px;
+  display: flex;
+}
+/* .registration {
+  margin-left: ;
+} */
+
+/* label{
+  width: 150px;
+} */

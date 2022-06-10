@@ -16,12 +16,17 @@ regRouter.get('/reg', (req, res) => {
 
 // Запись пользователя в базу после регистрации
 regRouter.post('/registr', async (req, res) => {
-  await User.create({
-    user_name: req.body.name,
-    email: req.body.mail,
-    password: req.body.password,
-  });
-  res.redirect('/');
+  const result = await User.findOne({ where: { email: req.body.mail }});
+  if (result === null) {
+    await User.create({
+      user_name: req.body.name,
+      email: req.body.mail,
+      password: req.body.password,
+    });
+    res.end('true');
+  } else {
+    res.end('false');
+  }
 });
 
 // Отрисовка страницы входа

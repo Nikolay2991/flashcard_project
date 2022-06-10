@@ -14,7 +14,7 @@ function Registration() {
           <button type="submit" className="btn btn-primary">Зарегистрироваться</button>
         </form> */}
 
-        <form className="registration" method="POST" action="/registr" id="registr">
+        <form className="registration" method="post" action="/registr" id="registr">
           <div className="row mb-3">
             {/* <div htmlFor="inputEmail3" className="col-sm-2 col-form-label fw-semibold">Как тебя зовут?</div> */}
             <input type="text" name="name" id="name" className="form-control" placeholder="Как тебя зовут?" />
@@ -22,11 +22,11 @@ function Registration() {
           </div>
           <div className="row mb-3">
 
-            <input type="text" name="name" id="name" className="form-control" placeholder="Логин:" />
+            <input type="text" name="login" id="login" className="form-control" placeholder="Логин:" />
           </div>
           <div className="row mb-3">
 
-            <input type="text" name="name" id="name" className="form-control" placeholder="Пароль:" />
+            <input type="password" name="password" id="password" className="form-control" placeholder="Пароль:" />
 
           </div>
           <button type="submit" className="btn btn-primary">Войти</button>

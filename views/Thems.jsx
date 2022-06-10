@@ -1,9 +1,9 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-function Themes({ title }) {
+function Themes() {
   return (
-    <Layout title={title}>
+    <Layout>
       <div className="themes">
 
         <form method="post" action="/question/1" data-id="1">

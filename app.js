@@ -11,6 +11,7 @@ const { User } = require('./db/models');
 const { firstTheme } = require('./db/models');
 const { secondTheme } = require('./db/models');
 const { thirdTheme } = require('./db/models');
+const Main = require('./views/Main');
 
 const app = express();
 
@@ -22,7 +23,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.redirect('/reg');
+  const reg = React.createElement(Main);
+  const html = ReactDOMServer.renderToStaticMarkup(reg);
+  res.write('<!DOCTYPE html>');
+  res.end(html);
 });
 
 // app.get('/', (req, res) => {
@@ -47,7 +51,7 @@ app.post('/registr', async (req, res) => {
       email: req.body.mail,
       password: req.body.password,
     });
-    res.end('true');
+    res.redirect('true');
   } else {
     res.end('false');
   }

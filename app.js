@@ -5,6 +5,8 @@ const ReactDOMServer = require('react-dom/server');
 const morgan = require('morgan');
 const Registration = require('./views/Registration.jsx');
 
+const regRouter = require('./routes/registration.routes');
+
 const app = express();
 
 const PORT = 3000;
@@ -24,8 +26,8 @@ app.get('/', (req, res) => {
   res.write('<!DOCTYPE html>');
   res.end(html);
 });
-app.post('/registr', (req,res)=>{
-  const kek = req
-  res.end('gjkexbkjcm')
-})
+
+
+app.use('/reg', regRouter);
+
 app.listen(PORT);

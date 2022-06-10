@@ -1,9 +1,9 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-function Registration({ title }) {
+function Registration() {
   return (
-    <Layout title={title}>
+    <Layout>
       <h1>Регистрация</h1>
 
       <form method="POST" action="/registr" id="registr">

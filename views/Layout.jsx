@@ -1,6 +1,6 @@
 const React = require('react');
  
-function Layout({ title ,children }) {
+function Layout({ children }) {
   return (
     <html lang="ru">
       <head>
@@ -9,7 +9,7 @@ function Layout({ title ,children }) {
         {/* <link rel="stylesheet" type="text/css" href="/style.css" /> */}
         <script defer src="js/registrate.js" />
       </head>
-      <body title={title}>
+      <body>
         {children}
         {/* <script defer src="../public/js/registrate.js" /> */}
       </body>

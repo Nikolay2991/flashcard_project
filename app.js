@@ -5,6 +5,7 @@ const ReactDOMServer = require('react-dom/server');
 const morgan = require('morgan');
 const Registration = require('./views/Registration');
 const Input = require('./views/Input');
+const Thems = require('./views/Thems');
 const { User } = require('./db/models');
 
 const app = express();
@@ -68,6 +69,13 @@ app.post('/input', async (reg, res) => {
   } else {
     res.redirect('/');
   }
+});
+
+app.get('/themes', (req, res) => {
+  const thems = React.createElement(Thems);
+  const html = ReactDOMServer.renderToStaticMarkup(thems);
+  res.write('<!DOCTYPE html>');
+  res.end(html);
 });
 
 app.listen(PORT);

@@ -4,15 +4,21 @@ const Layout = require('./Layout');
 function Input() {
   return (
     <Layout>
-      <div className="registration">
-        <h1>Зайди на свою страничку</h1>
-
-        <form method="POST" action="/">
-          <input type="text" name="login" className="input" />
-          <input type="passwod" name="passwod" className="input" />
-          <button type="submit" className="btn btn-primary">Войти</button>
-        </form>
-      </div>
+      <form>
+        <div className="row mb-3">
+          <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
+          <div className="col-sm-10">
+            <input type="email" className="form-control" id="inputEmail3" />
+          </div>
+        </div>
+        <div className="row mb-3">
+          <label htmlFor="inputPassword3" className="col-sm-2 col-form-label">Password</label>
+          <div className="col-sm-10">
+            <input type="password" className="form-control" id="inputPassword3" />
+          </div>
+        </div>
+        <button type="submit" className="btn btn-primary">Sign in</button>
+      </form>
     </Layout>
   );
 }

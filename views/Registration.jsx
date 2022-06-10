@@ -4,21 +4,16 @@ const Layout = require('./Layout');
 function Registration() {
   return (
     <Layout>
-      <h1>Регистрация</h1>
+      <div className="registration">
+        <h1>Регистрация</h1>
 
-      <form method="POST" action="/registr" id="registr">
-        <input type="text" name="name" id="name" />
-        <br />
-        <br />
-        <input type="text" name="login" id="login" />
-        <br />
-        <br />
-        <input type="password" name="password" id="pass" />
-        <br />
-        <br />
-        <button type="submit" name="js-registr">Зарегистрироваться</button>
-      </form>
-
+        <form method="POST" action="/">
+          <input type="text" name="name" className="input" />
+          <input type="text" name="login" className="input" />
+          <input type="passwod" name="passwod" className="input" />
+          <button type="submit" className="btn btn-primary">Зарегистрироваться</button>
+        </form>
+      </div>
     </Layout>
   );
 }
